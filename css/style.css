@@ -12,16 +12,9 @@
 
 img{max-width: 100%;}
 
-.background-wrapper{
-    height: 100vh;
+.wrapper{
+    overflow: hidden;
     width: 100vw;
-}
-
-.debug{
-    height: 100px;
-    width: 100px;
-    background-color: var(--blue);
-    z-index: 10;
 }
 
 .current-background{
