@@ -1,20 +1,20 @@
 
 let root = document.querySelector(':root');
 let counter = 1
-let images = [`<img src="./img/01.webp">`, `<img src="./img/02.webp">`, `<img src="./img/03.webp">`, `<img src="./img/04.webp">`,`<img src="./img/05.webp">`];
+let images = ["./img/01.webp", "./img/02.webp", "./img/03.webp", "./img/04.webp","./img/05.webp"];
 let imgContainer = document.getElementById("imgContainer")
 let counterValue = 1
 
-/*
-function counterUp() {
-    counterValue = 1
-    backgroundUpdater()
+let cardsLoaded = false
+
+if(cardsLoaded = false){
+
+    for(let i = 0; i < images.length; i++){
+        imgContainer.innerHTML += `<img src="${images[i]}">`
+    }
+
+    cardsLoaded = true
 }
-function counterDown() {
-    counterValue = -1
-    backgroundUpdater()
-}
-*/
 
 function counterUp() {
     counterValue += 1
@@ -26,6 +26,8 @@ function counterDown() {
     backgroundHandler()
 }
 
+
+
 function backgroundHandler(){
 
     if(counterValue <1){
@@ -34,10 +36,19 @@ function backgroundHandler(){
         counterValue = 1
     }
 
-    for(let i = 0; i<counterValue; i++){
-        imgContainer.innerHTML = images[i]
-    }   
+    imgContainer.innerHTML = images[i]
 }
+
+/*
+function counterUp() {
+    counterValue = 1
+    backgroundUpdater()
+}
+function counterDown() {
+    counterValue = -1
+    backgroundUpdater()
+}
+*/
 
 /*
 function backgroundUpdater(){
@@ -91,7 +102,7 @@ function background5(){
 */
 
 /*
-let images =[`<img src="./img/01.webp">`, `<img src="./img/02.webp">`, `<img src="./img/03.webp">`, `<img src="./img/04.webp">`,`<img src="./img/05.webp">`];
+let images =["./img/01.webp", "./img/02.webp", "./img/03.webp", "./img/04.webp","./img/05.webp"];
 let counter;
 
 function counterUp(){
