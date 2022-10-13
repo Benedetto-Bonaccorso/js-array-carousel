@@ -24,6 +24,10 @@ body{
     position: relative;
 }
 
+.wrapper>*{
+    
+}
+
 #imgContainer>img{
     position: absolute;
     left: -100%;
@@ -33,4 +37,8 @@ body{
     margin: auto;
     min-width: 100%;
     min-height:100%;
+}
+
+.hidden{
+    display: none;
 }

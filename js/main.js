@@ -1,42 +1,49 @@
 
-let root = document.querySelector(':root');
-let counter = 1
+let root = document.querySelector(":root");
 let images = ["./img/01.webp", "./img/02.webp", "./img/03.webp", "./img/04.webp","./img/05.webp"];
 let imgContainer = document.getElementById("imgContainer")
-let counterValue = 1
+let counter = 0
 
-let cardsLoaded = false
+for(let i = 0; i < images.length; i++){
+    imgContainer.innerHTML += `<img src="${images[i]}" id="${i}" class="">`
+    let hidingSlide = document.getElementById(`${i}`)
+    hidingSlide.classList.add("invisible")
+}
 
-if(cardsLoaded = false){
+let firstImage = document.getElementById("0")
+firstImage.classList.remove("invisible")
+
+function counterUp(){
+    counter++
+    counterChecker()
+    backgroundUpdater()
+}
+
+function counterDown(){
+    counter--
+    counterChecker()
+    backgroundUpdater()
+}
+
+function counterChecker(){
+    if(counter > images.length-1){
+        counter = 0
+    } else if(counter < 0){
+        counter = images.length-1
+    }
+}
+
+function backgroundUpdater(){
 
     for(let i = 0; i < images.length; i++){
-        imgContainer.innerHTML += `<img src="${images[i]}">`
+        let hidingSlide = document.getElementById(`${i}`)
+        if(!hidingSlide.classList.contains("invisible")){
+        hidingSlide.classList.add("invisible")}
     }
 
-    cardsLoaded = true
-}
+    let currentImg = document.getElementById(`${counter}`)
+    currentImg.classList.remove("invisible")
 
-function counterUp() {
-    counterValue += 1
-    backgroundHandler()
-}
-
-function counterDown() {
-    counterValue -= 1
-    backgroundHandler()
-}
-
-
-
-function backgroundHandler(){
-
-    if(counterValue <1){
-        counterValue = 5
-    } else if(counterValue >5){
-        counterValue = 1
-    }
-
-    imgContainer.innerHTML = images[i]
 }
 
 /*
